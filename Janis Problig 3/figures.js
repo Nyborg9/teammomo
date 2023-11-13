@@ -20,14 +20,15 @@ function circle(radius, mode, color, x, y) {
     ctx.arc(x,y,radius,0,2*Math.PI);
     ctx.stroke();
 }
+
 }
 
-function circleSvg(radius, mode, color) {
+function circleSvg(radius, mode, color, x, y) {
     if (mode=="solid"){
-    document.getElementById("Container").innerHTML = '<svg><circle r="'+ radius +'" cx="200" cy="70"  fill='+ color +'></circle></svg>'
+    document.getElementById("Graphics").innerHTML = document.getElementById("Graphics").innerHTML + '<circle r="'+ radius +'" cx="'+x+'" cy="'+y+'"  fill='+ color +'></circle>'
 }
     else if (mode="outline"){
-    document.getElementById("Container").innerHTML = '<svg><circle r="'+ radius +'" cx="50" cy="50" fill="none" stroke='+ color +'></circle></svg>'
+    document.getElementById("Graphics").innerHTML = document.getElementById("Graphics").innerHTML + '<circle r="'+ radius +'" cx="50" cy="50" fill="none" stroke='+ color +'></circle>'
     }
 }
 
@@ -44,12 +45,12 @@ function rectangle(length, height, mode, color, x, y) {
 
 }
 
-function rectangleSvg(length, height, mode, color) {
+function rectangleSvg(length, height, mode, color, x, y) {
     if (mode=="solid"){
-        document.getElementById("Container").innerHTML = document.getElementById("Container").innerHTML + '<svg><rect height="'+ height +'" width="'+ length +'" cx="20" cy="200"  fill='+ color +'></rect></svg>'
+        document.getElementById("Graphics").innerHTML = document.getElementById("Graphics").innerHTML + '<rect height="'+ height +'" width="'+ length +'" x="'+x+'" y="'+y+'"  fill='+ color +'></rect>'
     }
         else if (mode="outline"){
-        document.getElementById("Container").innerHTML = '<svg><rect height="'+ height +'" width="'+ length +'" cx="200" cy="200" fill="none" stroke='+ color +'></circle></svg>'
+        document.getElementById("Graphics").innerHTML = document.getElementById("Graphics").innerHTML + '<rect height="'+ height +'" width="'+ length +'" x="'+x+'" y="'+y+'" fill="none" stroke='+ color +'></rect>'
         }
 }
 
@@ -58,6 +59,9 @@ rectangle(30, 10, "solid", "black", 140, 50);
 circle(5, "solid", "red", 240, 30);
 
 
-circleSvg(60, "solid", "red")
+//(60, "solid", "red", 80, 80)
 
-rectangleSvg(50,50,"solid","blue")
+
+circleSvg(60, "solid", "blue", 60, 100)
+
+rectangleSvg(50,50,"solid","red", 50, 80)
