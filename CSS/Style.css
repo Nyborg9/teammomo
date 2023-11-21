@@ -1,0 +1,9 @@
+#Container{
+    width: 800px;
+    height: 300px;
+}
+/* Decides the size of the Container id*/
+.background{
+    background-color: yellow;
+}
+/* Makes the background color of the background id yellow*/
